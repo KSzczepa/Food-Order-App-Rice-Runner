@@ -1,14 +1,14 @@
 import React from "react";
 
-import Header from "./components/Layout/Header";
-
+import Header from "./components/Layout/Header/Header";
+import Container from "./components/Layout/Container";
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <Header></Header>
-      
-    </div>
+      <Container></Container>
+    </React.Fragment>
   );
 }
 
