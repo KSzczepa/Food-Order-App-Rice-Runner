@@ -1,4 +1,10 @@
+.img-trunk {
+    z-index: 0;
+}
+
 .main-img {
     width: 100%;
     height: auto;
+    overflow: hidden;
+    z-index: -1;
 }

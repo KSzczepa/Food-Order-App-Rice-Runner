@@ -4,8 +4,8 @@ import './Image.css';
 const Image = () => {
 
     return (
-        <div>
-            <img className='main-img' src={foodImg}></img>
+        <div className='img-trunk'>
+            <img className='main-img' src={foodImg} alt='A table full of delicious food.'></img>
         </div>
     );
 };
