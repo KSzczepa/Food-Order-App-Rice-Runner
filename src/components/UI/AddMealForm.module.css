@@ -1,0 +1,19 @@
+.form {
+    flex-direction: row;
+    width: fit-content;
+    overflow: hidden;
+    margin-top: 1em;
+    /* position: relative;
+    left: 5em;
+    width: 40%; */
+    position: fixed;
+    right: 5em;
+    text-align: center;
+}
+
+.items-num {
+    width: auto;
+    max-width: 10px;
+    margin: 0;
+}
+
