@@ -1,0 +1,56 @@
+.cart-button {
+    background-color: #272323;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 1.2px;
+    display: inline-block;
+    position: fixed;
+    top: 1.5em;
+    right: 5em;
+    font-size: 14px;
+    width: 16em;
+    height: 2.7em;
+    border-radius: 20px;
+    border-style: none;
+    opacity: 0.7;
+}
+
+span {
+    display: inline-block;
+    position: fixed;
+    top: 2.4em;
+    right: 11em;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.items-number {
+    display: inline-block;
+    background-color: #cd2121;
+    border-radius: 10px;
+    height: 25px;
+    width: 35px;
+    position: fixed;
+    top: 2em;
+    right: 7em;
+}
+
+.items-number label {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 25px;
+    position: fixed;
+    top: 1.9em;
+    right: 6.4em;
+}
+
+
+.font-basket {
+    display: inline-block;
+    position: fixed;
+    top: 2em;
+    right: 16em;   
+}
