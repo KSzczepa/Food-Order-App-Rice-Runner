@@ -4,6 +4,10 @@
     color: white;
     font-family: 'Ubuntu', sans-serif;
     border-radius: 20px;
+    height: 30px;
+    width: 120px;
+    margin-top: 0.8em;
+    border: none;
 }
 
 .add-meal:hover {
