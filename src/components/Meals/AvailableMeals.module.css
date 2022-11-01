@@ -1,0 +1,35 @@
+.meals {
+    max-width: 60rem;
+    width: 90%;
+    margin: 2rem auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    /* animation: meals-appear 1s ease-out forwards; */
+  }
+  
+  .meals ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .meals li {
+    border-bottom: 1px solid black;
+  }
+
+  .meals li:last-child {
+    border-bottom: none;
+  }
+  
+  @keyframes meals-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
