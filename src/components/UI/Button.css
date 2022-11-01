@@ -1,0 +1,11 @@
+.add-meal {
+    text-align: center;
+    background-color: #cd2121;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 20px;
+}
+
+.add-meal:hover {
+    background-color: #ca4242;
+}

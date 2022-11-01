@@ -1,0 +1,12 @@
+.container {
+    background-color: whitesmoke;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    height: auto;
+    min-height: 100px;
+    width: calc(100vw * 0.7);
+    border-radius: 15px;
+    position: fixed;
+    top: 500px;
+    left: calc(100vw * 0.15);
+}
