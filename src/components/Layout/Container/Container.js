@@ -1,5 +1,5 @@
 import styles from './Container.module.css';
-import AvailableMeals from '../Meals/AvailableMeals';
+import AvailableMeals from '../../Meals/AvailableMeals';
 
 const Container = () => {
     return (
