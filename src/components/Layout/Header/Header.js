@@ -1,6 +1,5 @@
 import React from "react";
 
-import Sticker from "./Sticker";
 import Image from "./Image";
 import MealsSummary from "./MealsSummary";
 
