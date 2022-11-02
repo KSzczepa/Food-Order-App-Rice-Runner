@@ -13,44 +13,55 @@
     border-radius: 20px;
     border-style: none;
     opacity: 0.7;
+    z-index: 0;
 }
 
-span {
-    display: inline-block;
-    position: fixed;
-    top: 2.4em;
-    right: 11em;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
+.cart-button:hover {
+    cursor: pointer;
 }
 
-.items-number {
-    display: inline-block;
+.cart-button span {
+    position: relative;
+    top: 0.1em;
+    right: 0.4em;
+    z-index: 2;
+    opacity: 1;
+}
+
+.cart-button.items-number {
     background-color: #cd2121;
     border-radius: 10px;
     height: 25px;
     width: 35px;
-    position: fixed;
-    top: 2em;
-    right: 7em;
+    position: relative;
+    top: -0.1em;
+    left: 0.5em;
+    z-index: 1;
+    opacity: 1;
 }
 
-.items-number label {
-    display: inline-block;
-    color: white;
-    text-align: center;
+.cart-button.items-number:hover {
+    cursor: pointer;
+}
+
+.cart-button.items-number label {
     font-size: 16px;
     font-weight: 600;
     width: 25px;
-    position: fixed;
-    top: 1.9em;
-    right: 6.4em;
+    position: relative;
+    top: 0.15em;
+    z-index: 2;
 }
 
+.cart-button.items-number label {
+    cursor: pointer;
+}
 
 .font-basket {
     display: inline-block;
-    position: fixed;
-    top: 2em;
-    right: 16em;   
+    position: relative;
+    top: 0.2em;
+    right: 0.5em;
+    z-index: 2;
+    opacity: 1; 
 }
