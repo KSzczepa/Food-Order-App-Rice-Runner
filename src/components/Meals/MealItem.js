@@ -2,7 +2,7 @@ import React from "react";
 import styles from './MealItem.module.css';
 
 import Card from "../UI/Card";
-import AddMealForm from "../UI/AddMealForm";
+import AddMealForm from './AddMealForm';
 
 const Meal = (props) => {
     const price = `€${props.price.toFixed(2)}`;
