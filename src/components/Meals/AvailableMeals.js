@@ -1,38 +1,48 @@
+import React, {useEffect, useState} from 'react';
 import styles from './AvailableMeals.module.css';
 
 import Meal from './MealItem';
 
-const DUMMY_MEALS = [
-    {
-        id: 'm1',
-        name: 'Sushi',
-        description: 'Sushi description',
-        price: 25.50,
-    },
-    {
-        id: 'm2',
-        name: 'Won-Ton Soup',
-        description: 'Just a soup',
-        price: 10.00,
-    },
-    {
-        id: 'm3',
-        name: 'Ramen',
-        description: 'Ramen description',
-        price: 18.00,
-    },
-    {
-        id: 'm4',
-        name: 'Chicken Curry',
-        description: 'Good chinese cousine',
-        price: 27.50,
-    },
-];
-
-
 const AvailableMeals = () => {
 
-    const mealList = DUMMY_MEALS.map(meal => <li key={meal.id}> 
+    const [meals, setMeals] = useState([]);
+
+    useEffect(() => {
+        const fetchMeals = async () => {
+            try {
+                    const response = await fetch('http://localhost:4000/products', {
+                        method: 'GET',
+                    }); //returns a Promise
+                    
+                    if (response.ok) {
+                        const responseData = await response.json();
+            
+                        const loadedMels = [];
+                        for (const key in responseData) {
+                            loadedMels.push({
+                                key: responseData[key].mealID,
+                                id: responseData[key].mealID,
+                                name: responseData[key].mealName,
+                                description: responseData[key].mealDesc, 
+                                price: responseData[key].mealPrice
+                            });
+                        };
+                        setMeals(loadedMels);
+                        // console.log(loadedMels);
+                    }            
+                    else {
+                        console.log('HTTP-Error ' + response.status);
+                    };
+                }            
+                catch (e) {
+                    console.log(e);
+                };
+        };
+
+        fetchMeals();
+    }, []);
+
+    const mealList = meals.map(meal => <li key={meal.id}> 
             <Meal 
                 key={meal.id} 
                 id={meal.id}
