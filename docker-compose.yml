@@ -1,0 +1,51 @@
+version: "3.8"
+
+services: 
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_PASSWORD=password
+      - MYSQL_DB=food_db1
+    ports: 
+      - 3306:3306
+    networks:
+      - shared-network
+    # volumes: it is postgees specific
+    #   - ./mysql
+
+  server:
+    container_name: server
+    restart: unless-stopped
+    image: server-prod:1.0.0
+    build: 
+      context: server
+      target: production
+      dockerfile: Dockerfile
+    ports: 
+      - 4000:4000
+    networks:
+      - shared-network
+    depends_on:
+      - mysql
+
+  api:
+    container_name: food-order-app
+    restart: unless-stopped
+    image: food-order-app-prod:1.0.0
+    build: 
+      context: api
+      target: production
+      dockerfile: Dockerfile
+    ports: 
+      - 3000:3000
+    networks:
+      - shared-network
+    depends_on:
+      - server
+
+    
+
+
+networks: 
+  shared-network:
