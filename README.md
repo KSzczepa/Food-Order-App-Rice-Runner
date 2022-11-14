@@ -5,7 +5,7 @@
   Node.js was used for this. The menu is retrieved from the MySQL database. </p>
   <p>Open http://localhost:3000 to view the app it in your browser.<br>
 The server runs on port 4000.  </p>
-<p>For ease of use, a container was realized using Docker.</p>
+<p>For ease of use, a container was implemented  using Docker.</p>
   
   
   <h2>Tools:</h2>
