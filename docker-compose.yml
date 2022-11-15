@@ -11,8 +11,8 @@ services:
       - 3306:3306
     networks:
       - shared-network
-    # volumes: it is postgees specific
-    #   - ./mysql
+    volumes: 
+      - ./mySQL_DB
 
   server:
     container_name: server
