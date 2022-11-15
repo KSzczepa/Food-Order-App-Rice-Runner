@@ -19,3 +19,10 @@ The server runs on port 4000.  </p>
   <li>Docker</li>
   <li>npm packet manager</li>
 </ul>
+
+
+<h2>Design</h2>
+<div align='center'>
+<img src='https://user-images.githubusercontent.com/87570436/202033742-e68b3d36-ff40-4459-bf12-63533270dba1.jpg' width='800px'/>
+<img src='https://user-images.githubusercontent.com/87570436/202033781-93a38b04-3314-4e53-93ce-7b3429d2e156.jpg' width='800px'/>
+</div>
