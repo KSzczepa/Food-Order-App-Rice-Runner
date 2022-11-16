@@ -4,7 +4,6 @@ services:
   mysql:
     image: mysql:8.0 
     restart: always
-    command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_PASSWORD=password
@@ -15,8 +14,7 @@ services:
     networks:
       - shared-network
     volumes: 
-      - my-db:/var/lib/mysql
-      - /mySQL_DB/meals.ibd   
+      - ./mySQL_DB/meals.sql:/docker-entrypoint-initdb.d/meals.sql
       
   server:
     container_name: server
@@ -53,5 +51,5 @@ networks:
   shared-network:
     driver: local
 
-volumes: 
-  my-db:
+# volumes: 
+#   my-db:
