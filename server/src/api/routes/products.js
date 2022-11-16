@@ -3,6 +3,12 @@ const router = express.Router();
 const mysql = require('mysql');
 const morgan = require('morgan');
 
+// require("dotenv").config();
+// const connection = mysql.createConnection({
+//     database: process.env.MYSQLDB_USER,
+//     user: process.env.MYSQLDB_DATABASE,
+//     password: process.env.MYSQLDB_ROOT_PASSWORD
+// });
 
 const connection = mysql.createConnection({
     host: 'localhost',

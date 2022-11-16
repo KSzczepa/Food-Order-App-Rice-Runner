@@ -11,7 +11,10 @@ RUN npm install
 
 COPY . .
 
-# RUN npm run build
+EXPOSE 4000
 
-CMD ["sh", "-c", "npm run start:production"]
+ENV PORT 4000
+
+CMD ["sh", "-c", "npm start"]
+# CMD ["sh", "-c", "npm run start:production"]
 
