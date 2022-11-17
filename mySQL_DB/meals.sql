@@ -16,3 +16,18 @@ VALUES ('m3', 'Ramen', 'Japanese noodle soup with a combination of broth, one ty
 
 INSERT INTO `food_db1`.`meals` (mealID, mealName, mealDesc, mealPrice)
 VALUES ('m4', 'Pad Thai', 'A Thai dish of stir-fried rice noodles with eggs, vegetables and tofu in a sauce.', 7.5);
+
+INSERT INTO `food_db1`.`meals` (mealID, mealName, mealDesc, mealPrice)
+VALUES ('m5', 'Ma Po Tofu', 'Spicy sauce slow cooked with soft tofu, peas, and carrots.', 9);
+
+INSERT INTO `food_db1`.`meals` (mealID, mealName, mealDesc, mealPrice)
+VALUES ('m6', 'Chow Mein', 'Traditional Chinese dish made with egg noodles, stir-fried veggies and chicken.', 7.5);
+
+INSERT INTO `food_db1`.`meals` (mealID, mealName, mealDesc, mealPrice)
+VALUES ('m7', 'Hot Pot', 'A big pot filled with simmering broth, with various meats, vegetables, noodles and sauces.', 8.5);
+
+INSERT INTO `food_db1`.`meals` (mealID, mealName, mealDesc, mealPrice)
+VALUES ('m8', 'Kung Pao Chicken', 'Classic Chinese dish to have along with either Chow Mein or egg fried rice.', 8);
+
+INSERT INTO `food_db1`.`meals` (mealID, mealName, mealDesc, mealPrice)
+VALUES ('m9', 'Chicken Curry', 'Brimming with tender chicken and crisp veggies in a cheerful bright yellow curry sauce.', 6.5);
