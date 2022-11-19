@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const morgan = require('morgan');
 
 // require("dotenv").config();
@@ -11,7 +11,7 @@ const morgan = require('morgan');
 // });
 
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'host.docker.internal',
     port: 3306,
     database: 'food_db1',
     user: 'root',
@@ -33,7 +33,7 @@ connection.connect((err) => {
 router.get('/', (req, res, next) => {
     // const receivedID = req.body.id;
     // connection.query("SELECT * FROM meals WHERE mealID = ?", [receivedID], (err, response, fields)=>{
-    connection.query("SELECT * FROM meals", (err, response, fields)=>{
+    connection.query("SELECT * FROM food_db1.meals", (err, response, fields)=>{
         if (err) {
             console.log(err);
         }

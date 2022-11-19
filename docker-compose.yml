@@ -49,7 +49,7 @@ services:
     
 networks: 
   shared-network:
-    driver: local
+    driver: bridge
 
 # volumes: 
 #   my-db:
