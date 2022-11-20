@@ -65,7 +65,7 @@ const AvailableMeals = () => {
             {mealList}
         </ul>
         :
-        <p className={`${styles.meals}`}>There is no data to display</p>}
+        <p className={`${styles.data}`}>Loading...</p>}
         
     </section>
 };
