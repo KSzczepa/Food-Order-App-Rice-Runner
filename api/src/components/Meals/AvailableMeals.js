@@ -6,6 +6,11 @@ import Meal from './MealItem';
 const AvailableMeals = () => {
 
     const [meals, setMeals] = useState([]);
+    const [isMealListLoaded, setIsMealListLoaded] = useState(false);
+
+    const mealListLoadedHandler = (isLoaded) => {
+        setIsMealListLoaded(isLoaded);
+    };
 
     useEffect(() => {
         const fetchMeals = async () => {
@@ -28,14 +33,16 @@ const AvailableMeals = () => {
                             });
                         };
                         setMeals(loadedMels);
-                        // console.log(loadedMels);
+                        mealListLoadedHandler(true);
                     }            
                     else {
                         console.log('HTTP-Error ' + response.status);
+                        mealListLoadedHandler(false);
                     };
                 }            
                 catch (e) {
                     console.log(e);
+                    mealListLoadedHandler(false);
                 };
         };
 
@@ -53,9 +60,13 @@ const AvailableMeals = () => {
         </li>);
 
     return <section className={`${styles.meals}`}>
+        {isMealListLoaded ? 
         <ul>
             {mealList}
         </ul>
+        :
+        <p className={`${styles.meals}`}>There is no data to display</p>}
+        
     </section>
 };
 
