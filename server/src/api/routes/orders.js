@@ -3,8 +3,8 @@ const router = express.Router();
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    // host: 'host.docker.internal',
+    // host: 'localhost',
+    host: 'host.docker.internal',
     port: 3306,
     // database: 'user_orders',
     user: 'root',
