@@ -4,6 +4,18 @@
   padding: 0;
   max-height: 20rem;
   overflow: scroll;
+  overscroll-behavior: contain;
+  overflow-x: hidden;
+}
+
+.cart-items-hide {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 7.5rem;
+  overflow: scroll;
+  overscroll-behavior: contain;
+  overflow-x: hidden;
 }
 
 .total {
@@ -13,6 +25,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   margin: 1rem 0;
+  /* border-top: 2px solid #8a2b06; */
 }
 
 .actions {

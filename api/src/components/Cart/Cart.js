@@ -1,15 +1,17 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import styles from './Cart.module.css';
 import CartContext from "../../store/CartContext";
+import SubmitForm from "./SubmitForm";
 
 const Cart = (props) => {
 
     const cartCTX = useContext(CartContext);
     const totalAmount = `€${cartCTX.totalAmount.toFixed(2)}`;
     const hasItems = cartCTX.items.length > 0;
+    const [orderFormVisible, setOrderFormVisible] = useState(false);
 
     const cartItemRemoveHandler = (id) => {
         cartCTX.removeItem(id);
@@ -19,8 +21,12 @@ const Cart = (props) => {
         cartCTX.addItem({...item, amount:1});
     };
 
+    const orderFormVisibleHandler = () => {
+        setOrderFormVisible(true);
+    };
+
     const cartItems = (
-    <ul className={styles['cart-items']}>
+    <ul className={`${!orderFormVisible ? styles['cart-items'] : styles['cart-items-hide']}`}>
         {
             cartCTX.items.map((item) => (
             <CartItem 
@@ -35,16 +41,19 @@ const Cart = (props) => {
         }
     </ul>);
 
+    const modalAction = <div className={styles.actions}>
+                        <button className={styles['button--alt']} onClick={props.onCloseCart}>Close</button>
+                        {hasItems && <button className={styles.button} onClick={orderFormVisibleHandler}>Order</button>}
+                        </div>;
+
+
     return (<Modal onCloseCart={props.onCloseCart}>
             {cartItems}
             <div className={styles.total}>
                 <span>Total Amount</span>
                 <span>{totalAmount}</span>
-            </div>
-            <div className={styles.actions}>
-                <button className={styles['button--alt']} onClick={props.onCloseCart}>Close</button>
-                {hasItems && <button className={styles.button}>Order</button>}
-            </div>
+            </div>            
+            {orderFormVisible ? <SubmitForm onCancel={props.onCloseCart}/> : modalAction}             
         </Modal>
     );
 };
