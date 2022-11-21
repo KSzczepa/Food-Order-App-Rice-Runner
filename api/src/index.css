@@ -12,5 +12,6 @@ html {
 body {
   margin: 0;
   background-color: #393939;
+  min-width: 1200px;
 }
 
