@@ -3,15 +3,10 @@ const router = express.Router();
 const mysql = require('mysql2');
 const morgan = require('morgan');
 
-// require("dotenv").config();
-// const connection = mysql.createConnection({
-//     database: process.env.MYSQLDB_USER,
-//     user: process.env.MYSQLDB_DATABASE,
-//     password: process.env.MYSQLDB_ROOT_PASSWORD
-// });
 
 const connection = mysql.createConnection({
-    host: 'host.docker.internal',
+    host: 'localhost',
+    // host: 'host.docker.internal',
     port: 3306,
     database: 'food_db1',
     user: 'root',
@@ -32,8 +27,8 @@ connection.connect((err) => {
 //get the whole row
 router.get('/', (req, res, next) => {
     // const receivedID = req.body.id;
-    // connection.query("SELECT * FROM meals WHERE mealID = ?", [receivedID], (err, response, fields)=>{
-    connection.query("SELECT * FROM food_db1.meals", (err, response, fields)=>{
+    // connection.query("SELECT * FROM menu WHERE mealID = ?", [receivedID], (err, response, fields)=>{
+    connection.query("SELECT * FROM food_db1.menu", (err, response, fields)=>{
         if (err) {
             console.log(err);
         }
@@ -59,7 +54,7 @@ router.post('/', (req, res, next) => {
 //get only 1 product
 router.get('/:ID', (req, res, next) => {
     const id = req.params.ID;
-    connection.query("SELECT * FROM meals WHERE mealID = ?", [id], (err, response, fields)=>{
+    connection.query("SELECT * FROM menu WHERE mealID = ?", [id], (err, response, fields)=>{
             if (err) {
                 console.log(err);
             }
