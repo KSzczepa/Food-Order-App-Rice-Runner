@@ -1,12 +1,20 @@
 import styles from './SubmitForm.module.css';
 import useInput from '../../hooks/use-input';
-import React from "react";
+import React, {useState} from "react";
 
 
 const SubmitForm = (props) => {
 
     const codeRe = new RegExp("^\\d{5}$");
 	const phoneRe = new RegExp("^\\d{9}$");
+
+    // const [formInputValidity, setFormInputValidity] = useState({
+    //     name: false,
+    //     street: false,
+    //     code: false,
+    //     city: false,
+    //     phone: false
+    // });
 
     const { 
 		value: enteredName, 
@@ -55,6 +63,19 @@ const SubmitForm = (props) => {
 		reset: resetInputPhone
 	} = useInput(value => phoneRe.test(value));
 
+
+    // const formValidityHandler = () => {
+    //     setFormInputValidity({
+    //         name: enteredNameIsValid,
+    //         street: enteredStreetIsValid,
+    //         code: enteredCodeIsValid,
+    //         city: enteredCityIsValid,
+    //         phone: enteredPhoneIsValid
+    //     });
+    // };
+
+    // formValidityHandler();
+    // console.log(formInputValidity);
 	let formIsValid = false;
 	
 	if (enteredNameIsValid && enteredStreetIsValid && enteredCodeIsValid && enteredCityIsValid && enteredPhoneIsValid) {
@@ -67,16 +88,26 @@ const SubmitForm = (props) => {
     const submitHandler = event => {
         event.preventDefault();
 
-        if (!enteredNameIsValid || !enteredStreetIsValid || !enteredCodeIsValid || !enteredCityIsValid || !enteredPhoneIsValid) {
+        if (!formIsValid) {
 			return;
 		}
 
-		resetInputName();
-		resetInputStreet();
-		resetInputCode();
-		resetInputCity();
-		resetInputPhone();
+		// resetInputName();
+		// resetInputStreet();
+		// resetInputCode();
+		// resetInputCity();
+		// resetInputPhone();
+
+        props.onConfirm({
+            name: enteredName,
+            street: enteredStreet,
+            city: enteredCity,
+            postalCode: enteredCode,
+            phoneNumber: enteredPhone
+        });
     };
+
+    
 
 
 
@@ -101,7 +132,7 @@ const SubmitForm = (props) => {
                         onChange={streetChangeHandler} 
 						onBlur={streetBlurHandler}
 						value={enteredStreet}/>
-					{streetInputHasError && <p className={styles['error-text']}>Street must not be empty.</p>}
+					{streetInputHasError && <p className={styles['error-text']}>Enter a valid street.</p>}
                 </div>
                 <div className={`${codeInputHasError ? styles.invalid : styles.control}`}>
                     <label htmlFor='code'>Postal Code</label>
@@ -111,7 +142,7 @@ const SubmitForm = (props) => {
                         onChange={codeChangeHandler} 
 						onBlur={codeBlurHandler}
 						value={enteredCode}/>
-					{codeInputHasError && <p className={styles['error-text']}>Code must have 5 digits.</p>}
+					{codeInputHasError && <p className={styles['error-text']}>Enter a valid code.</p>}
                 </div>
                 <div className={`${cityInputHasError ? styles.invalid : styles.control}`}>
                     <label htmlFor='city'>City</label>
@@ -121,7 +152,7 @@ const SubmitForm = (props) => {
                         onChange={cityChangeHandler} 
 						onBlur={cityBlurHandler}
 						value={enteredCity}/>
-					{cityInputHasError && <p className={styles['error-text']}>City must not be empty.</p>}
+					{cityInputHasError && <p className={styles['error-text']}>Enter a valid city.</p>}
                 </div>
                 <div className={`${phoneInputHasError ? styles.invalid : styles.control}`}>
 					<label htmlFor='phone'>Phone number</label>

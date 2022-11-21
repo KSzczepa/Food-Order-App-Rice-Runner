@@ -25,6 +25,29 @@ const Cart = (props) => {
         setOrderFormVisible(true);
     };
 
+    let orderID = Math.random().toString(36).substr(2, 16); 
+    console.log(orderID);
+    const adr = 'http://localhost:4000/orders/'+orderID;
+    console.log(adr);
+
+    const submitOrderHandler = (userData) => {
+        console.log(JSON.stringify({
+            user: userData,
+            orderedItems: cartCTX.items
+        }));
+        fetch(adr, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user: userData,
+                orderedItems: cartCTX.items
+            }),
+            contentType:"application/json",
+            dataType:"json",
+        });
+    };
+
+
     const cartItems = (
     <ul className={`${!orderFormVisible ? styles['cart-items'] : styles['cart-items-hide']}`}>
         {
@@ -53,7 +76,7 @@ const Cart = (props) => {
                 <span>Total Amount</span>
                 <span>{totalAmount}</span>
             </div>            
-            {orderFormVisible ? <SubmitForm onCancel={props.onCloseCart}/> : modalAction}             
+            {orderFormVisible ? <SubmitForm onConfirm={submitOrderHandler} onCancel={props.onCloseCart}/> : modalAction}             
         </Modal>
     );
 };
