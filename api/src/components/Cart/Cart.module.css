@@ -67,3 +67,8 @@ ul {
 ul li {
 	list-style: none;
 }
+
+.content {
+  text-align: center;
+  font-size: 1.1rem;
+}

@@ -5,8 +5,8 @@ import React, {useState} from "react";
 
 const SubmitForm = (props) => {
 
-    const codeRe = new RegExp("^\\d{5}$");
-	const phoneRe = new RegExp("^\\d{9}$");
+    const codeRe = new RegExp("^\\d{5}|^\\d{2}-\\d{3}$");
+	const phoneRe = new RegExp("^\\d{9}|^\\d{3}-\\d{3}-\\d{3}|^\\+\\d{11}|^\\+\\d{2}-\\d{3}-\\d{3}-\\d{3}|^\\+\\d{2}\\s\\d{3}-\\d{3}-\\d{3}$");
 
     // const [formInputValidity, setFormInputValidity] = useState({
     //     name: false,
@@ -78,7 +78,8 @@ const SubmitForm = (props) => {
     // console.log(formInputValidity);
 	let formIsValid = false;
 	
-	if (enteredNameIsValid && enteredStreetIsValid && enteredCodeIsValid && enteredCityIsValid && enteredPhoneIsValid) {
+	if (enteredNameIsValid && enteredStreetIsValid && enteredCodeIsValid && enteredCityIsValid && enteredPhoneIsValid && 
+		!nameInputHasError && !streetInputHasError && !codeInputHasError && !cityInputHasError && !phoneInputHasError) {
 		formIsValid = true;
 	}
 	else if (nameInputHasError || streetInputHasError || codeInputHasError || cityInputHasError || phoneInputHasError) {
