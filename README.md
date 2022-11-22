@@ -1,11 +1,14 @@
 # Food-Order-App
+<h2>Modern Food ordering App created with React & Node.js & MySQL Database</h2>
 
-<p>The project is a modern food ordering app ReactMeals. The user can add things to the shopping cart, remove them, and make an order.</p>
+<p>The project is a modern food ordering app ReactMeals. The user can add meals to the shopping cart, choosing from menu, remove them and make an order.</p>
 <p>The application was built in JavaScript using React. The next part involved creating a server that sends relevant queries to the database. 
   Node.js was used for this. The menu is retrieved from the MySQL database. </p>
+  <p>User can also create orders. After filling the form, every order along with the user data, goes into the database.</p>
   <p>Open http://localhost:3000 to view the app it in your browser.<br>
-The server runs on port 4000.  </p>
-<p>For ease of use, a container was implemented  using Docker.</p>
+The server runs on port 4000, database server on port 3306.  </p>
+<p>For ease of use, a container was implemented using Docker.</p>
+<p>Docker-compose contains 3 services: application, server and the database.</p>
   
   
   <h2>Tools:</h2>
