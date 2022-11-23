@@ -1,6 +1,7 @@
 import styles from './SubmitForm.module.css';
 import useInput from '../../hooks/use-input';
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
+import InputForm from '../UI/InputForm/InputForm.js';
 
 
 const SubmitForm = (props) => {
@@ -8,13 +9,7 @@ const SubmitForm = (props) => {
     const codeRe = new RegExp("^\\d{5}|^\\d{2}-\\d{3}$");
 	const phoneRe = new RegExp("^\\d{9}|^\\d{3}-\\d{3}-\\d{3}|^\\+\\d{11}|^\\+\\d{2}-\\d{3}-\\d{3}-\\d{3}|^\\+\\d{2}\\s\\d{3}-\\d{3}-\\d{3}$");
 
-    // const [formInputValidity, setFormInputValidity] = useState({
-    //     name: false,
-    //     street: false,
-    //     code: false,
-    //     city: false,
-    //     phone: false
-    // });
+	const phoneInputRef = useRef();
 
     const { 
 		value: enteredName, 
@@ -64,18 +59,6 @@ const SubmitForm = (props) => {
 	} = useInput(value => phoneRe.test(value));
 
 
-    // const formValidityHandler = () => {
-    //     setFormInputValidity({
-    //         name: enteredNameIsValid,
-    //         street: enteredStreetIsValid,
-    //         code: enteredCodeIsValid,
-    //         city: enteredCityIsValid,
-    //         phone: enteredPhoneIsValid
-    //     });
-    // };
-
-    // formValidityHandler();
-    // console.log(formInputValidity);
 	let formIsValid = false;
 	
 	if (enteredNameIsValid && enteredStreetIsValid && enteredCodeIsValid && enteredCityIsValid && enteredPhoneIsValid && 
@@ -92,12 +75,11 @@ const SubmitForm = (props) => {
         if (!formIsValid) {
 			return;
 		}
+		if (!enteredPhoneIsValid) {
+			phoneInputRef.current.focus();
+		}
 
-		// resetInputName();
-		// resetInputStreet();
-		// resetInputCode();
-		// resetInputCity();
-		// resetInputPhone();
+
 
         props.onConfirm({
             name: enteredName,
@@ -117,7 +99,7 @@ const SubmitForm = (props) => {
             <div className={styles.control}>
                 <div className={`${nameInputHasError ? styles.invalid : styles.control}`}>
                     <label htmlFor='name'>Yout Name</label>
-                    <input 
+                    <InputForm 
                         type='text' 
                         id='name'
                         onChange={nameChangeHandler} 
@@ -127,7 +109,7 @@ const SubmitForm = (props) => {
                 </div>
                 <div className={`${streetInputHasError ? styles.invalid : styles.control}`}>
                     <label htmlFor='street'>Street</label>
-                    <input 
+                    <InputForm 
                         type='text' 
                         id='street'
                         onChange={streetChangeHandler} 
@@ -137,7 +119,7 @@ const SubmitForm = (props) => {
                 </div>
                 <div className={`${codeInputHasError ? styles.invalid : styles.control}`}>
                     <label htmlFor='code'>Postal Code</label>
-                    <input 
+                    <InputForm 
                         type='text' 
                         id='code'
                         onChange={codeChangeHandler} 
@@ -147,7 +129,7 @@ const SubmitForm = (props) => {
                 </div>
                 <div className={`${cityInputHasError ? styles.invalid : styles.control}`}>
                     <label htmlFor='city'>City</label>
-                    <input 
+                    <InputForm 
                         type='text' 
                         id='city'
                         onChange={cityChangeHandler} 
@@ -157,7 +139,8 @@ const SubmitForm = (props) => {
                 </div>
                 <div className={`${phoneInputHasError ? styles.invalid : styles.control}`}>
 					<label htmlFor='phone'>Phone number</label>
-					<input 
+					<InputForm 
+						ref={phoneInputRef}
 						type='text' 
 						id='phone'
 						onChange={phoneChangeHandler} 
