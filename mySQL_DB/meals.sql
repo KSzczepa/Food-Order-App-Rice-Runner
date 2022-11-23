@@ -6,7 +6,7 @@ CREATE TABLE `food_db1`.`menu` (
 );
 
 INSERT INTO `food_db1`.`menu` (mealID, mealName, mealDesc, mealPrice)
-VALUES ('m1', 'Sushi', 'A Japanese dish featuring speciallypared rice, salmon, cucumber and surimi.', 15.5);
+VALUES ('m1', 'Sushi', 'A Japanese dish featuring specially prepared rice, salmon, cucumber and surimi.', 15.5);
 
 INSERT INTO `food_db1`.`menu` (mealID, mealName, mealDesc, mealPrice)
 VALUES ('m2', 'Won-Ton Soup', 'Standard of Chinese cusine, made from seasoned chicken broth with filled wontons.', 3.5);
