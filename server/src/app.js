@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 //Routes which should handle requests
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+const usersRoutes = require('./api/routes/users');
 
 
 app.use(morgan('dev'));
@@ -26,41 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-
-// const connection = mysql.createConnection({
-//     host: 'localhost',
-//     port: 3306,
-//     database: 'food_db1',
-//     user: 'root',
-//     password: 'password'
-// });
-
-// connection.connect((err) => {
-//     if (err) {
-//         console.log('error occured while connecting', err);
-//     }
-//     else {
-//         console.log('connection created with mysql successfully');
-//     }
-// });
-
-// let receivedID = 'm2';
-
-// app.get("/fetch", (req, res) => {
-//     connection.query("SELECT * FROM meals WHERE mealID = ?", [receivedID], (err, res, fields)=>{
-//         if (err) {
-//             console.log(err);
-//         }
-//         else {
-//             const data = JSON.parse(JSON.stringify(res));
-//             console.log(data);
-//         }
-//     })
-    
-// });
-
-
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/users', usersRoutes);
 
 module.exports = app;
