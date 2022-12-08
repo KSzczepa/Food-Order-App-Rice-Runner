@@ -1,5 +1,8 @@
 .control {
-  margin-bottom: 0.5rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
 }
 
 .control label,
@@ -15,17 +18,17 @@
 }
 
 .control input {
+  flex: 3;
   font: inherit;
+  padding: 0.35rem 0.35rem;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 20rem;
-  max-width: 100%;
 }
 
 .control input:focus {
   outline: none;
-  border-color: #0b7caa;
-  background: #eff3ff;
+  border-color: #4f005f;
+  background: #f6dbfc;
 }
 
 .control.invalid input {
