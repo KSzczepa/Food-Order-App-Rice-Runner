@@ -1,0 +1,10 @@
+.btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
