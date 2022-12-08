@@ -1,0 +1,20 @@
+.sign {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+
+.btn {
+    background-color: transparent;
+    margin-left: 10px;
+    font-size: 16px;
+    border: none;
+    color: rgb(32, 31, 40);
+    text-decoration-line: underline;
+}
+
+.btn:hover {
+    color: orangered;
+    font-weight: 2rem;
+}
+
