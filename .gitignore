@@ -1,4 +1,4 @@
-node_modules
+cd node_modules
 node_modules/.bin/acorn
 node_modules/.bin/acorn
 node_modules/.bin/acorn.cmd
@@ -40,5 +40,8 @@ node_modules/.bin/acorn
 node_modules/.bin/css-has-pseudo
 node_modules/.bin/loose-envify.ps1
 node_modules/.bin/acorn.cmd
+node_modules
+node_modules
+node_modules
 node_modules
 node_modules
