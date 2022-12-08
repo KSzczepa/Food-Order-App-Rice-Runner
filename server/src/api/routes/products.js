@@ -5,8 +5,8 @@ const morgan = require('morgan');
 
 
 const connection = mysql.createConnection({
-    // host: 'localhost',
-    host: 'host.docker.internal',
+    host: 'localhost',
+    // host: 'host.docker.internal',
     port: 3306,
     database: 'food_db1',
     user: 'root',
