@@ -1,7 +1,7 @@
 import {useRef, useState} from 'react';
 
 import styles from './AddMealForm.module.css';
-import ButtonAddMeal from "../UI/ButtonAddMeal";
+import ButtonAddMeal from "../UI/Buttons/ButtonAddMeal";
 import Input from '../UI/Input';
 
 const AddMealForm = (props) => {
