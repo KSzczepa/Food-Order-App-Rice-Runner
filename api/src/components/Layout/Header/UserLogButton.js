@@ -1,5 +1,5 @@
 import classes from './UserLogButton.module.css';
-import '../../fontello-auth/css/fontello.css';
+import '../../Fontello-Fonts/fontello-auth/css/fontello.css';
 
 const UserLogButton = (props) => {
     return (<button className={classes.btn} onClick={props.onClick}>

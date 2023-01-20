@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import classes from './CartButton.module.css';
 import CartContext from '../../../store/CartContext';
-import '../../fontello/css/fontello.css';
+import '../../Fontello-Fonts/fontello/css/fontello.css';
 
 const CartButton = (props) => {
     const cartCTX = useContext(CartContext);
