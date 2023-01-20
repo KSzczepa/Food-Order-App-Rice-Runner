@@ -7,7 +7,7 @@ import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 import AuthContext from "./store/AuthContext/auth-context";
 import Card from "./components/UI/Card";
-import LogginForm from "./components/LogginForm/LogginForm";
+import LogginForm from "./components/LogginForm/LogginMainForm";
 
 function App() {
 
