@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import classes from './Sticker.module.css';
 import CartButton from './CartButton';
 import AuthContext from '../../../store/AuthContext/auth-context';
-import '../../fontello-auth/css/fontello.css';
+import '../../Fontello-Fonts/fontello-auth/css/fontello.css';
 import UserLogButton from './UserLogButton';
 
 const Sticker = (props) => {
