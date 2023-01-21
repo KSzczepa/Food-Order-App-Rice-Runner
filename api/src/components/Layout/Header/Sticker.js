@@ -1,12 +1,10 @@
 import React, {useContext} from 'react';
 import classes from './Sticker.module.css';
 import CartButton from './CartButton';
-import AuthContext from '../../../store/AuthContext/auth-context';
 import '../../Fontello-Fonts/fontello-auth/css/fontello.css';
 import UserLogButton from './UserLogButton';
 
 const Sticker = (props) => {
-    const authCtx = useContext(AuthContext);
 
     // const showUserLogginForm = () => {
     //     console.log('LogginFormActive?');
