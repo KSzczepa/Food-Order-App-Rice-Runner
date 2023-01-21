@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useReducer, useContext, useRef, Fragment } from 'react';
+import React, { useState, useEffect, useReducer, useRef, Fragment } from 'react';
 
 import classes from './UserAuthForm.module.css';
 import SubmitButton from '../UI/Buttons/SubmitButton';
-import AuthContext from '../../store/AuthContext/auth-context';
-import InputForm from '../UI/InputForm/InputForm.js';
+import LoginFormComp from '../UI/InputForm/LoginFormComp.js';
 // import passwordHash from 'password-hash';
+import {useSelector, useDispatch} from 'react-redux';
+import { authActions } from '../../store/AuthContext/auth';
 
 const emailReducer = (prevstate, action) => {
 	if (action.type === 'USER_INPUT') {
@@ -33,7 +34,9 @@ const passwordReducer = (prevstate, action) => {
 };
 
 const UserAuthForm = (props) => {
-	const authCtx = useContext(AuthContext);
+	const dispatch = useDispatch();
+	// const isAuth = useSelector(state => state.auth.isAuthenticated);
+	// const isLogFormActive = useSelector(state => state.auth.isLoginFormActive);
 
 	const emailInputRef = useRef();
 	const passwordInputRef = useRef();
@@ -117,6 +120,7 @@ const UserAuthForm = (props) => {
 			const responseData = await response.json();
 			if (responseData.isRegistered == true){	
 				setIsUserActive(true);
+				loginHandler();
 				setActiveUserData({
 					ID: responseData.data.ID,
 					login: responseData.data.login,
@@ -136,13 +140,14 @@ const UserAuthForm = (props) => {
 		
     };
 
-
+	const loginHandler = () => {
+		dispatch(authActions.login());
+	};
 
 	const submitHandler = (event) => {
 		event.preventDefault();
 		if (formIsValid) {
 			userDataValidation(emailState.value, passwordState.value);
-			authCtx.onLogIn(emailState.value, passwordState.value);
 		}
 		else if (!emailIsValid) {
 			emailInputRef.current.focus();
@@ -157,7 +162,7 @@ const UserAuthForm = (props) => {
 		// <Card className={classes.login}>
 		<Fragment>
 			<form onSubmit={submitHandler}>
-				<InputForm
+				<LoginFormComp className={`${classes.control}`}
 					ref={emailInputRef}
 					id={"login"}
 					type={"text"}
@@ -167,7 +172,7 @@ const UserAuthForm = (props) => {
 					onChange={emailChangeHandler}
 					onBlur={validateEmailHandler}
 				/>
-				<InputForm 
+				<LoginFormComp 
 					ref={passwordInputRef}
 					id={"password"}
 					type={"password"}
@@ -177,7 +182,7 @@ const UserAuthForm = (props) => {
 					onChange={passwordChangeHandler}
 					onBlur={validatePasswordHandler}
 				/>
-				<div className={classes.actions}>
+				<div className={classes.actions}  style={{marginTop: '2rem'}}>
 					{<SubmitButton type="submit" className={classes.btn} disabled={!emailIsValid || !passwordisValid}>
 						Login
 					</SubmitButton>}
