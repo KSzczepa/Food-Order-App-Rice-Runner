@@ -15,6 +15,7 @@ The server runs on port 4000, database server on port 3306.  </p>
   <ul>
   <li>JavaScript</li>
   <li>React</li>
+  <li>Redux</li>
   <li>Node.js</li>
   <li>CSS</li>
   <li>HTML</li>
