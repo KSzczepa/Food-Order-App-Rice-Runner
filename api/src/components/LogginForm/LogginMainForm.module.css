@@ -1,12 +1,16 @@
 .sign {
     text-align: center;
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 
 .btn {
     background-color: transparent;
     margin-left: 10px;
+    /* margin-top: 10px; */
     font-size: 16px;
     border: none;
     color: rgb(32, 31, 40);
@@ -17,4 +21,6 @@
     color: orangered;
     font-weight: 2rem;
 }
+
+
 
