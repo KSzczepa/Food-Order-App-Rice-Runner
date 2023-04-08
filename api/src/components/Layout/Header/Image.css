@@ -3,8 +3,19 @@
 }
 
 .main-img {
-    width: 100%;
+    width: 100vw;
     height: auto;
     overflow: hidden;
     z-index: -1;
 }
+
+/* Maximum width */
+@media (max-width: 768px) {
+    .main-img {
+        width: auto;
+        height: calc(100vh * 0.3);
+         clip-path: inset(0 calc(100%- 210px) 0 210px round 0);
+         position: relative;
+         right: 210px;
+    }
+  }
