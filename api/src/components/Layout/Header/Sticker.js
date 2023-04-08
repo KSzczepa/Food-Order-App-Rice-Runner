@@ -19,7 +19,8 @@ const Sticker = (props) => {
                     {/* {!authCtx.isLoggedIn && */}
                     <UserLogButton onClick={props.onShowUserForm}></UserLogButton>
                 </div>
-                <h2>ReactMeals</h2>
+                <h2 className={classes.desktop}>ReactMeals</h2>
+                <h2 className={classes.mobile}>RM</h2>
                 <CartButton onClick={props.onShowCart}></CartButton>
             </div>
             
