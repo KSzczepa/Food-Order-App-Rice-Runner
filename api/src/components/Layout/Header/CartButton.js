@@ -32,7 +32,7 @@ const CartButton = (props) => {
             <div className={`${classes['font-basket']}`}>
                 <i className="icon-basket" style={{ fontSize: '20px' , marginRight: '10px'}} />
             </div>
-            <span>Your Cart</span>
+            <span className={classes.txt}>Your Cart</span>
             <div className={`${classes['cart-button']} ${classes['items-number']}`}>
                 <label>{numOfCartItems}</label>
             </div>
