@@ -33,6 +33,6 @@
       width: calc(100vw * 0.8);
       overscroll-behavior: none;
       left: calc(100vw * 0.1);
-      margin-left: 10px;
+      margin-left: -5px;
     }
   }
