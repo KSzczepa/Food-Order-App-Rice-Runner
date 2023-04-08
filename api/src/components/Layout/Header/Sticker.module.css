@@ -9,7 +9,7 @@
     background-color: #c34f3f;
     color: white;
     font-family: 'Ubuntu', sans-serif;
-    min-width: 600px;
+    /* min-width: 600px; */
 }
 
 .sticker {
@@ -17,7 +17,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-width: 700px;
+    /* min-width: 700px; */
     height: 5rem;
     background-color: #c34f3f;
 }

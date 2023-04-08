@@ -22,7 +22,7 @@ const Meal = (props) => {
     return (
         <Card>
             <div className={`${styles.meal}`}>
-                <h3>{props.name}</h3>
+                <h3 className={styles.title}>{props.name}</h3>
                 <p className={`${styles.description}`}>{props.description}</p>
                 <p className={`${styles.price}`}>{price}</p>   
             </div>

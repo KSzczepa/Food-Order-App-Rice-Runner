@@ -14,5 +14,19 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   font: inherit;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .input label {
+      /* width: 80%; */
+      font-size: 14px;
+      margin-right: -0.5rem;
+  }
+
+  .input input {
+    width: 2.2rem;
+    margin-left: 14px;
+    padding-left: 0.5rem;
+  }
 }
