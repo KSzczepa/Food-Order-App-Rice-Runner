@@ -4,7 +4,7 @@
     font-family: 'Ubuntu', sans-serif;
     height: auto;
     min-height: 100px;
-    min-width: 500px;
+    min-width: 400px;
     width: calc(100vw * 0.7);
     border-radius: 20px;
     position: relative;
@@ -30,6 +30,9 @@
 
   @media (max-width: 768px) {
     .container {
-      width: calc(100vw * 0.7);
+      width: calc(100vw * 0.8);
+      overscroll-behavior: none;
+      left: calc(100vw * 0.1);
+      margin-left: 10px;
     }
   }
