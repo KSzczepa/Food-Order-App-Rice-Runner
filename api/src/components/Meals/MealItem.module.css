@@ -13,6 +13,7 @@ h3 {
     font-style: italic;
     margin-top: 0;
     margin-bottom: 0;
+    width: 80%;
 }
 
 
@@ -21,3 +22,24 @@ h3 {
     display: block;
 }
 
+@media (max-width: 768px) {
+    .title {
+        font-size: 16px;
+        width: fit-content;
+    }
+
+    .description {
+        width: 50%;
+        display: inline-block;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1150px) {
+    .description {
+        width: 65%;
+    }
+  }
