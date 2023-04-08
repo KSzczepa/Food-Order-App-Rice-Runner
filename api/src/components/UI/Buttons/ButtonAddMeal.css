@@ -13,3 +13,9 @@
 .add-meal:hover {
     background-color: #ca4242;
 }
+
+@media (max-width: 768px) {
+    .add-meal {
+        width: 90px;
+    }
+}
