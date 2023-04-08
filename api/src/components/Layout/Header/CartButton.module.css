@@ -6,7 +6,7 @@
     display: inline-block;
     position: fixed;
     top: 1.5em;
-    right: 5em;
+    right: 10em;
     font-size: 14px;
     width: 16em;
     height: 2.7em;
@@ -88,3 +88,27 @@
     }
   }
   
+ 
+  @media (max-width: 768px) {
+    .txt {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cart-button {
+      width: 7em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .font-basket {
+      right: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cart-button.items-number {
+      left: 0;
+    }
+  }

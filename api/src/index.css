@@ -12,6 +12,30 @@ html {
 body {
   margin: 0;
   background-color: #393939;
-  min-width: 1200px;
+  width: calc(100vw - 200px);
+  overscroll-behavior-x: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  overflow-y: visible;
+  overflow-x: hidden;
+  height: 0;
+  /* display: none; */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5a5a5a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a5a5a5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f4f4f4;
+}

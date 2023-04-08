@@ -90,7 +90,7 @@ const Cart = (props) => {
     </React.Fragment>;
 
 
-    return (<Modal onCloseCart={props.onCloseCart}>
+    return (<Modal onClose={props.onCloseCart}>
         {!isSubmitting && !wasSubmited && cartModalContent}
         {isSubmitting && isSubmittingModalContent}
         {!isSubmitting && wasSubmited && wasSubmitedModalContent}

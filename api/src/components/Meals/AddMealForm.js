@@ -1,7 +1,7 @@
 import {useRef, useState} from 'react';
 
 import styles from './AddMealForm.module.css';
-import Button from "../UI/Button";
+import ButtonAddMeal from "../UI/Buttons/ButtonAddMeal";
 import Input from '../UI/Input';
 
 const AddMealForm = (props) => {
@@ -38,7 +38,7 @@ const AddMealForm = (props) => {
                     defaultValue: '1',
                 }
             }/>                    
-            <Button></Button>
+            <ButtonAddMeal></ButtonAddMeal>
             {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
         </form> 
     );

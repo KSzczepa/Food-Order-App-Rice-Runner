@@ -11,6 +11,12 @@
       "css": "basket",
       "code": 59392,
       "src": "typicons"
+    },
+    {
+      "uid": "93faa7cec68bf69ec455bbab61e58e48",
+      "css": "th-1",
+      "code": 59395,
+      "src": "elusive"
     }
   ]
 }

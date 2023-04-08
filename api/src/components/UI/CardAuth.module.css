@@ -1,0 +1,9 @@
+.universal {
+    background-color: white;
+    /* display: inline-block; */
+    /* display: inside; */
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    /* left: 20px; */
+    min-width: fit-content;
+}

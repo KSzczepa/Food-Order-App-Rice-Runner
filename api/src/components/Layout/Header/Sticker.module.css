@@ -31,3 +31,44 @@
     top: -0.3rem;
 }
 
+.font-basket {
+    display: inline-block;
+    position: fixed;
+    top: 1.2rem;
+    right: 45px;
+    z-index: 10;
+    opacity: 1; 
+    color: white;
+    /* height: 3.5rem; */
+    /* width: 3.5rem; */
+    text-align: center;
+    /* padding-top: 10px; */
+  }
+  
+  .font-basket:hover {
+    background-color: #835f8a;
+    border-radius: 20px;
+  }
+
+.btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    .mobile {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .desktop {
+      display: none;
+    }
+  }

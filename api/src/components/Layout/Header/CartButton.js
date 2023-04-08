@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import classes from './CartButton.module.css';
 import CartContext from '../../../store/CartContext';
-import '../../fontello/css/fontello.css';
+import '../../Fontello-Fonts/fontello/css/fontello.css';
 
 const CartButton = (props) => {
     const cartCTX = useContext(CartContext);
@@ -32,7 +32,7 @@ const CartButton = (props) => {
             <div className={`${classes['font-basket']}`}>
                 <i className="icon-basket" style={{ fontSize: '20px' , marginRight: '10px'}} />
             </div>
-            <span>Your Cart</span>
+            <span className={classes.txt}>Your Cart</span>
             <div className={`${classes['cart-button']} ${classes['items-number']}`}>
                 <label>{numOfCartItems}</label>
             </div>

@@ -1,9 +1,9 @@
-import './Button.css';
+import './ButtonAddMeal.css';
 
-const Button = (props) => {
+const ButtonAddMeal = (props) => {
     return(
         <button className='add-meal' onClick={props.onClick}>+ Add</button>
     );
 };
 
-export default Button;
+export default ButtonAddMeal;
