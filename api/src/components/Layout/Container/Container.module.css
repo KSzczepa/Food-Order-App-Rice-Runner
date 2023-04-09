@@ -4,12 +4,12 @@
     font-family: 'Ubuntu', sans-serif;
     height: auto;
     min-height: 100px;
-    min-width: 400px;
+    /* min-width: 400px; */
     width: calc(100vw * 0.7);
     border-radius: 20px;
     position: relative;
     top: 60px;
-    left: calc(100vw * 0.15);
+    left: calc((100vw - calc(100vw * 0.7)) / 2);
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -32,7 +32,6 @@
     .container {
       width: calc(100vw * 0.8);
       overscroll-behavior: none;
-      left: calc(100vw * 0.1);
-      margin-left: 10px;
+      left: calc((100vw - calc(100vw * 0.8)) / 2);
     }
   }

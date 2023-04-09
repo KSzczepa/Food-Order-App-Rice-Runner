@@ -6,7 +6,7 @@
     display: inline-block;
     position: fixed;
     top: 1.5em;
-    right: 10em;
+    left: calc(100vw * 0.9 - 16em);
     font-size: 14px;
     width: 16em;
     height: 2.7em;
@@ -98,6 +98,7 @@
   @media (max-width: 768px) {
     .cart-button {
       width: 7em;
+      left: calc(100vw * 0.85 - 7em);
     }
   }
 

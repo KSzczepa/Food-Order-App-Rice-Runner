@@ -1,5 +1,7 @@
 .img-trunk {
     z-index: 0;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .main-img {
@@ -12,12 +14,15 @@
 /* Maximum width */
 @media (max-width: 768px) {
     .main-img {
+        overflow-clip-margin: content-box;
         width: 1000px;
-        /* width: auto; */
-        /* height: calc(100vh * 0.1vw); */
         height: auto;
-         clip-path: inset(0 calc(100%- 215px) 100px 215px round 0);
-         position: relative;
-         right: 200px;
+        /* clip-path: inset(0 calc(calc(1000px - 100vw - 310px)) 0 310px); */
+        clip-path: inset(0 calc(calc(1000px - 100vw - 310px)) 0 calc(360px - 50vw));
+        position: relative;
+        /* right: 310px; */
+        right: calc(360px - 50vw);
+        overflow: hidden;
+        transform: scale(1.3);
     }
   }
