@@ -17,7 +17,7 @@ const Sticker = (props) => {
             <div className={`${classes.sticker}`}>                
                 <div className={`${classes['font-basket']}`}>
                     {/* {!authCtx.isLoggedIn && */}
-                    <UserLogButton onClick={props.onShowUserForm}></UserLogButton>
+                    {/* <UserLogButton onClick={props.onShowUserForm}></UserLogButton> */}
                 </div>
                 <h2 className={classes.desktop}>RiceRunner</h2>
                 <h2 className={classes.mobile}>RR</h2>

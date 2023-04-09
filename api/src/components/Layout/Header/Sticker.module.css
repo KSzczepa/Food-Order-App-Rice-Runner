@@ -16,19 +16,26 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    /* min-width: 700px; */
+    width: 100vw;
     height: 5rem;
     background-color: #c34f3f;
 }
 
 .header h2 {
-    margin-left: 5rem;
+    /* margin-left: calc(100vw * 0.2); */
     font-size: 32px;
     width: fit-content;
     letter-spacing: 3px;
     position: fixed;
     top: -0.3rem;
+}
+
+.desktop {
+  margin-left: calc(100vw * 0.1);
+}
+
+.mobile {
+  margin-left: 65px;
 }
 
 .font-basket {
