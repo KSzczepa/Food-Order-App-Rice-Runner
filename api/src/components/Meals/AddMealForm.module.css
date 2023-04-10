@@ -24,8 +24,14 @@
     }
   }
 
-@media (max-width: 768px) {
+@media (min-width: 440px) and (max-width: 768px) {
     .form {
         right: 3em;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .form {
+        right: 20px;
     }
   }

@@ -3,7 +3,7 @@
     display: inline-block;
     font-family: 'Ubuntu', sans-serif;
     position: relative;
-    left: 20px;
+    /* left: 20px; */
     display: flex;
     width: 90%
 }
