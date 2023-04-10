@@ -15,7 +15,8 @@ const AvailableMeals = () => {
     useEffect(() => {
         const fetchMeals = async () => {
             try {
-                    const response = await fetch('http://localhost:4000/products', {
+                    // const response = await fetch('http://localhost:4000/products', {
+                    const response = await fetch('https://rice-runner-serv.onrender.com/menu', {
                         method: 'GET',
                     }); //returns a Promise
                     
@@ -25,11 +26,16 @@ const AvailableMeals = () => {
                         const loadedMels = [];
                         for (const key in responseData) {
                             loadedMels.push({
-                                key: responseData[key].mealID,
-                                id: responseData[key].mealID,
-                                name: responseData[key].mealName,
-                                description: responseData[key].mealDesc, 
-                                price: responseData[key].mealPrice
+                                key: responseData[key].id,
+                                id: responseData[key].id,
+                                name: responseData[key].name,
+                                description: responseData[key].description, 
+                                price: responseData[key].price
+                                // key: responseData[key].mealID,
+                                // id: responseData[key].mealID,
+                                // name: responseData[key].mealName,
+                                // description: responseData[key].mealDesc, 
+                                // price: responseData[key].mealPrice
                             });
                         };
                         setMeals(loadedMels);
