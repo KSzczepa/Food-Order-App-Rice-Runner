@@ -14,8 +14,14 @@
     background-color: #ca4242;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 440px) and (max-width: 768px) {
     .add-meal {
         width: 90px;
+    }
+}
+
+@media (max-width: 440px) {
+    .add-meal {
+        width: 60px;
     }
 }

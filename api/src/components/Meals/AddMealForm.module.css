@@ -32,6 +32,7 @@
 
   @media (max-width: 440px) {
     .form {
-        right: 20px;
+        right: 10px;
+        flex-direction: column;
     }
   }

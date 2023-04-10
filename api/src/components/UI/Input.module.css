@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  flex-direction: row;
 }
 
 .input label {
@@ -17,7 +18,7 @@
   padding-left: 1rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 440px) and (max-width: 768px) {
   .input label {
       /* width: 80%; */
       font-size: 14px;
@@ -28,5 +29,27 @@
     width: 2.2rem;
     margin-left: 14px;
     padding-left: 0.5rem;
+  }
+}
+
+@media (max-width: 440px) {
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .input label {
+      /* width: 80%; */
+      font-size: 14px;
+      margin-left: 20px;
+  }
+
+  .input input {
+    width: 50px;
+    margin-left: 5px;
+    padding-left: 10px;
+    margin-top: 5px;
   }
 }
