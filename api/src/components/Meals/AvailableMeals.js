@@ -12,11 +12,15 @@ const AvailableMeals = () => {
         setIsMealListLoaded(isLoaded);
     };
 
+    const url = 'https://rice-runner-serv.onrender.com/menu';
+
     useEffect(() => {
-        const fetchMeals = async () => {
+        const fetchMeals = async (url, retryCount = 0) => {
+
+            const maxRetries = 5;
+
             try {
-                    // const response = await fetch('http://localhost:4000/products', {
-                    const response = await fetch('https://rice-runner-serv.onrender.com/menu', {
+                    const response = await fetch(url, {
                         method: 'GET',
                     }); //returns a Promise
                     
@@ -31,11 +35,6 @@ const AvailableMeals = () => {
                                 name: responseData[key].name,
                                 description: responseData[key].description, 
                                 price: responseData[key].price
-                                // key: responseData[key].mealID,
-                                // id: responseData[key].mealID,
-                                // name: responseData[key].mealName,
-                                // description: responseData[key].mealDesc, 
-                                // price: responseData[key].mealPrice
                             });
                         };
                         setMeals(loadedMels);
@@ -44,15 +43,23 @@ const AvailableMeals = () => {
                     else {
                         console.log('HTTP-Error ' + response.status);
                         mealListLoadedHandler(false);
+                        if (retryCount < maxRetries) {
+                            console.log('retry');
+                            return fetchMeals(url, retryCount + 1);
+                        }
                     };
                 }            
                 catch (e) {
                     console.log(e);
                     mealListLoadedHandler(false);
+                    if (retryCount < maxRetries) {
+                        console.log('retry');
+                        return fetchMeals(url, retryCount + 1);
+                    }
                 };
         };
 
-        fetchMeals();
+        fetchMeals(url);
     }, []);
 
     const mealList = meals.map(meal => <li key={meal.id}> 
