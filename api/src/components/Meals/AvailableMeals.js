@@ -44,7 +44,6 @@ const AvailableMeals = () => {
                         console.log('HTTP-Error ' + response.status);
                         mealListLoadedHandler(false);
                         if (retryCount < maxRetries) {
-                            console.log('retry');
                             return fetchMeals(url, retryCount + 1);
                         }
                     };
@@ -53,7 +52,6 @@ const AvailableMeals = () => {
                     console.log(e);
                     mealListLoadedHandler(false);
                     if (retryCount < maxRetries) {
-                        console.log('retry');
                         return fetchMeals(url, retryCount + 1);
                     }
                 };
@@ -77,8 +75,12 @@ const AvailableMeals = () => {
         <ul>
             {mealList}
         </ul>
-        :
-        <p className={`${styles.data}`}>Loading...</p>}
+        :        
+        <div className={styles.loadingContainer}>
+            {/* <div className={styles.data}>Loading</div> */}
+            <div className={styles.ellipsis}>
+            <div></div><div></div><div></div><div></div></div>
+        </div>}
         
     </section>
 };
