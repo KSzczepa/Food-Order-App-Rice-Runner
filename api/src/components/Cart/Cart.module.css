@@ -16,6 +16,7 @@
   overflow: scroll;
   overscroll-behavior: contain;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .total {
@@ -71,4 +72,18 @@ ul li {
 .content {
   text-align: center;
   font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .total {
+  font-size: 20px;
+  }
+  .actions {
+    text-align: center;
+  }
+  .cart-items {
+    -webkit-box-shadow: inset 0px -23px 35px -39px rgba(66, 68, 90, 1);
+    -moz-box-shadow: inset 0px -23px 35px -39px rgba(66, 68, 90, 1);
+    box-shadow: inset 0px -23px 35px -39px rgba(66, 68, 90, 1);
+  }
 }
