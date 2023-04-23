@@ -71,13 +71,15 @@ const Cart = (props) => {
         {hasItems && <button className={styles.button} onClick={orderFormVisibleHandler}>Order</button>}
     </div>;
 
+    const cartSummary = <div className={styles.total}>
+        <span>Total Amount</span>
+        <span>{totalAmount}</span>
+    </div>;
+
 
     const cartModalContent = <React.Fragment>
-        {cartItems}
-        <div className={styles.total}>
-            <span>Total Amount</span>
-            <span>{totalAmount}</span>
-        </div>
+        {!orderFormVisible ? cartItems : ''}
+        {cartSummary}
         {orderFormVisible ? <SubmitForm onConfirm={submitOrderHandler} onCancel={props.onCloseCart} /> : modalAction}
     </React.Fragment>;
 
