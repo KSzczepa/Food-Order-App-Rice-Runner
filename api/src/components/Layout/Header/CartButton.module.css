@@ -99,17 +99,21 @@
     .cart-button {
       width: 7em;
       left: calc(100vw * 0.85 - 7em);
+      height: 33px;
+      top: 0.8em;
     }
-  }
-
-  @media (max-width: 768px) {
+    .cart-button.items-number{
+      height: 20px;
+      width: 30px;
+    }
     .font-basket {
       right: 0;
+      top: 0;
     }
-  }
-
-  @media (max-width: 768px) {
     .cart-button.items-number {
       left: 0;
+    }
+    .cart-button.items-number label {
+      top: 0;
     }
   }

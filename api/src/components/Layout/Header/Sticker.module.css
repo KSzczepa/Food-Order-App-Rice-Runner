@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     z-index: 5;
-    width: 100%;
+    width: 100vw;
     height: 5rem;
     background-color: #c34f3f;
     color: white;
@@ -13,12 +13,12 @@
 }
 
 .sticker {
-    position: fixed;
+    /* position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 5rem;
-    background-color: #c34f3f;
+    /* width: 100vw;
+    height: 5rem; */
+    /* background-color: #c34f3f; */ 
 }
 
 .header h2 {
@@ -46,10 +46,7 @@
     z-index: 10;
     opacity: 1; 
     color: white;
-    /* height: 3.5rem; */
-    /* width: 3.5rem; */
     text-align: center;
-    /* padding-top: 10px; */
   }
   
   .font-basket:hover {
@@ -77,5 +74,11 @@
   @media (max-width: 768px) {
     .desktop {
       display: none;
+    }
+    .header {
+      height: 3.5rem;
+    }
+    .header h2 {
+      font-size: 23px;
     }
   }
