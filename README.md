@@ -1,4 +1,5 @@
-# Food-Order-App
+# Food Ordering Application: Rice Runner
+https://ricerunner-4cdfa.web.app/
 <h2>Modern Food ordering App created with React & Node.js & MySQL Database</h2>
 
 <p>The project is a modern food ordering app ReactMeals. The user can add meals to the shopping cart, choosing from menu, remove them and make an order.</p>
