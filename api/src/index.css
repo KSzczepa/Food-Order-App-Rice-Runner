@@ -39,3 +39,16 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #f4f4f4;
 }
+
+@media (max-width: 768px) {
+  .body {
+    overflow: hidden;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 0;
+    /* display: none; */
+  }
+}
