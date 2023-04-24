@@ -61,7 +61,7 @@ const SubmitForm = (props) => {
 
 	let formIsValid = false;
 	
-	if (enteredNameIsValid && enteredStreetIsValid && enteredCodeIsValid && enteredCityIsValid && enteredPhoneIsValid && 
+	if ((enteredNameIsValid || enteredStreetIsValid || enteredCodeIsValid || enteredCityIsValid || enteredPhoneIsValid) && 
 		!nameInputHasError && !streetInputHasError && !codeInputHasError && !cityInputHasError && !phoneInputHasError) {
 		formIsValid = true;
 	}
