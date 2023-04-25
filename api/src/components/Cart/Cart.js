@@ -6,6 +6,9 @@ import styles from './Cart.module.css';
 import CartContext from "../../store/CartContext";
 import SubmitForm from "./SubmitForm";
 
+// const url = 'https://rice-runner-serv.onrender.com/orders';
+const url = 'http://localhost:4000/orders/';
+
 const Cart = (props) => {
 
     const cartCTX = useContext(CartContext);
@@ -27,22 +30,18 @@ const Cart = (props) => {
         setOrderFormVisible(true);
     };
 
-    let orderID = Math.random().toString(36).substr(2, 16);
-    console.log(orderID);
-    const adr = 'http://localhost:4000/orders/' + orderID;
-    console.log(adr);
+    // let orderID = Math.random().toString(36).substr(2, 16);
+    // const adr = 'http://localhost:4000/orders/' + orderID;\
 
     const submitOrderHandler = async (userData) => {
         setisSubmitting(true);
-        await fetch(adr, {
+        await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 user: userData,
                 orderedItems: cartCTX.items
             })
-            // contentType:"application/json",
-            // dataType:"json",
         });
         setisSubmitting(false);
         setWasSubmited(true);

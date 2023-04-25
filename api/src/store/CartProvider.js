@@ -21,11 +21,9 @@ const cardReducer = (prevState, action) => {
             };
             updatedItems = [...prevState.items];
             updatedItems[existingCartItemIndex] = updatedItem;
-            console.log('if', updatedItems);
         }
         else {
             updatedItems = prevState.items.concat(action.item);
-            console.log('else', updatedItems);
         }
 
         return ({

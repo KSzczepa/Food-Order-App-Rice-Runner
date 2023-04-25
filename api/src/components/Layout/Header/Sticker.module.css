@@ -12,14 +12,14 @@
     /* min-width: 600px; */
 }
 
-.sticker {
-    /* position: fixed;
+/* .sticker {
+    position: fixed;
     top: 0;
     left: 0;
-    /* width: 100vw;
-    height: 5rem; */
-    /* background-color: #c34f3f; */ 
-}
+    width: 100vw;
+    height: 5rem; 
+    background-color: #c34f3f; 
+} */
 
 .header h2 {
     /* margin-left: calc(100vw * 0.2); */
@@ -27,7 +27,8 @@
     width: fit-content;
     letter-spacing: 3px;
     position: fixed;
-    top: -0.3rem;
+    /* top: -0.3rem; */
+    top: -5px;
 }
 
 .desktop {
@@ -81,4 +82,8 @@
     .header h2 {
       font-size: 23px;
     }
+  /* .sticker {
+    height: 3.5rem;
+    padding-top: 15px;
+  } */
   }

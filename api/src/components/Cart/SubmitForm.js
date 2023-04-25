@@ -38,7 +38,6 @@ const SubmitForm = (props) => {
 		reset: resetInputCode
 	} = useInput(value => codeRe.test(value));
 
-	console.log('code', parseInt(enteredCode));
 
 	const { 
 		value: enteredCity, 

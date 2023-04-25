@@ -100,7 +100,7 @@
       width: 7em;
       left: calc(100vw * 0.85 - 7em);
       height: 33px;
-      top: 0.8em;
+      top: 13px;
     }
     .cart-button.items-number{
       height: 20px;
