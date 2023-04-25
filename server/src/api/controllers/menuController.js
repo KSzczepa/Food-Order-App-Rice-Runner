@@ -2,15 +2,14 @@
 
 const mongodb = require('mongodb');
 
-const Product = require('../../models/product');
+const Product = require('../models/product');
+const ProductService = require('../services/productService');
 
 const ObjectId = mongodb.ObjectId;
 
 exports.getAllProducts = (req, res, next) => {
-    console.log("fetch data");
-    Product.fetchAll()
+  ProductService.fetchAll()
     .then(products => {
-      console.log(products);
       res.send(products);
     })
     .catch(err => console.log(err));
