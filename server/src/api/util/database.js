@@ -4,7 +4,7 @@ const MongoClient = mongodb.MongoClient;
 const mongoConnect = (callback) => {  
   MongoClient.connect('mongodb+srv://JustUser:xO8ijc3PL7TtBmeo@cluster0.iun9qhb.mongodb.net/RiceRunnerDatabase?retryWrites=true&w=majority')
   .then(client => {
-    console.log('Connected!');
+    console.log('Connected to database!');
     _db = client.db();
     callback();
   })
