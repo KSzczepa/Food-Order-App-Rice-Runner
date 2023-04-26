@@ -1,8 +1,7 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import classes from './Sticker.module.css';
 import CartButton from './CartButton';
 import '../../Fontello-Fonts/fontello-auth/css/fontello.css';
-import UserLogButton from './UserLogButton';
 
 const Sticker = (props) => {
 

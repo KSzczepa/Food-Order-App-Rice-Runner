@@ -1,4 +1,3 @@
-import foodImg from '../images/food15.jpg';
 import './Image.css';
 
 const Image = () => {
