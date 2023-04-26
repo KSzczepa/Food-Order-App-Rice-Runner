@@ -19,9 +19,15 @@ const AvailableMeals = () => {
 
             const maxRetries = 5;
 
+            const controller = new AbortController();
+            const timeout = 8000;
+            const id = setTimeout(() => controller.abort(), timeout);
+
             try {
                     const response = await fetch(url, {
                         method: 'GET',
+                        timeout: 8000,
+                        signal: controller.signal
                     }); //returns a Promise
                     
                     if (response.ok) {
