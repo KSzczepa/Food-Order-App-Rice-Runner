@@ -17,7 +17,7 @@ const AvailableMeals = () => {
     useEffect(() => {
         const fetchMeals = async (url, retryCount = 0) => {
 
-            const maxRetries = 5;
+            const maxRetries = 50;
 
             const controller = new AbortController();
             const timeout = 8000;

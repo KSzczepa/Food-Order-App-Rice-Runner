@@ -4,7 +4,7 @@ import classes from './UserAuthForm.module.css';
 import SubmitButton from '../UI/Buttons/SubmitButton';
 import LoginFormComp from '../UI/InputForm/LoginFormComp.js';
 // import passwordHash from 'password-hash';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import { authActions } from '../../store/AuthContext/auth';
 
 const emailReducer = (prevstate, action) => {

@@ -1,6 +1,6 @@
 import styles from './SubmitForm.module.css';
 import useInput from '../../hooks/use-input';
-import React, {useState, useRef} from "react";
+import React, {useRef} from "react";
 import InputForm from '../UI/InputForm/InputForm.js';
 
 
@@ -16,8 +16,7 @@ const SubmitForm = (props) => {
 		isValid: enteredNameIsValid,
 		hasError: nameInputHasError, 
 		valueChangeHandler: nameChangeHandler, 
-		inputBlurHander: nameBlurHandler,
-		reset: resetInputName
+		inputBlurHander: nameBlurHandler
 	} = useInput(value => value.trim() !== '');
 
 	const { 
@@ -25,8 +24,7 @@ const SubmitForm = (props) => {
 		isValid: enteredStreetIsValid,
 		hasError: streetInputHasError, 
 		valueChangeHandler: streetChangeHandler, 
-		inputBlurHander: streetBlurHandler,
-		reset: resetInputStreet
+		inputBlurHander: streetBlurHandler
 	} = useInput(value => value.trim() !== '');
 	
 	const { 
@@ -34,8 +32,7 @@ const SubmitForm = (props) => {
 		isValid: enteredCodeIsValid,
 		hasError: codeInputHasError, 
 		valueChangeHandler: codeChangeHandler, 
-		inputBlurHander: codeBlurHandler,
-		reset: resetInputCode
+		inputBlurHander: codeBlurHandler
 	} = useInput(value => codeRe.test(value));
 
 
@@ -44,8 +41,7 @@ const SubmitForm = (props) => {
 		isValid: enteredCityIsValid,
 		hasError: cityInputHasError, 
 		valueChangeHandler: cityChangeHandler, 
-		inputBlurHander: cityBlurHandler,
-		reset: resetInputCity
+		inputBlurHander: cityBlurHandler
 	} = useInput(value => value.trim() !== '');
 
 	const { 
@@ -53,8 +49,7 @@ const SubmitForm = (props) => {
 		isValid: enteredPhoneIsValid,
 		hasError: phoneInputHasError, 
 		valueChangeHandler: phoneChangeHandler, 
-		inputBlurHander: phoneBlurHandler,
-		reset: resetInputPhone
+		inputBlurHander: phoneBlurHandler
 	} = useInput(value => phoneRe.test(value));
 
 
