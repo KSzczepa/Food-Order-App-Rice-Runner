@@ -6,8 +6,8 @@ import styles from './Cart.module.css';
 import CartContext from "../../store/CartContext";
 import SubmitForm from "./SubmitForm";
 
-// const url = 'https://rice-runner-serv.onrender.com/orders';
-const url = 'http://localhost:4000/orders/';
+const url = 'https://rice-runner-serv.onrender.com/orders';
+// const url = 'http://localhost:4000/orders/';
 
 const Cart = (props) => {
 
