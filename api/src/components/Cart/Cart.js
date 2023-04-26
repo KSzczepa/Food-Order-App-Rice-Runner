@@ -5,18 +5,25 @@ import CartItem from './CartItem';
 import styles from './Cart.module.css';
 import CartContext from "../../store/CartContext";
 import SubmitForm from "./SubmitForm";
+import { useNavigate } from "react-router-dom";
+
 
 const url = 'https://rice-runner-serv.onrender.com/orders';
 // const url = 'http://localhost:4000/orders/';
 
 const Cart = (props) => {
 
+    const navigate = useNavigate(); 
     const cartCTX = useContext(CartContext);
     const totalAmount = `€${cartCTX.totalAmount.toFixed(2)}`;
     const hasItems = cartCTX.items.length > 0;
     const [orderFormVisible, setOrderFormVisible] = useState(false);
     const [isSubmitting, setisSubmitting] = useState(false);
     const [wasSubmited, setWasSubmited] = useState(false);
+
+    const navigateHandler = () => {
+        navigate('/order-form');
+    };
 
     const cartItemRemoveHandler = (id) => {
         cartCTX.removeItem(id);
@@ -28,6 +35,7 @@ const Cart = (props) => {
 
     const orderFormVisibleHandler = () => {
         setOrderFormVisible(true);
+        navigateHandler();
     };
 
     // let orderID = Math.random().toString(36).substr(2, 16);
